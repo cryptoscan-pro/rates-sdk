@@ -3,6 +3,9 @@
 The easiest way to get dynamic swap/exchange rates by CEX and DEX tokens;
 
 [[GitHub]](https://github.com/cryptoscan-pro/scanner-sdk)
+[[Our website]](https://cryptoscan.pro/)
+[[Docs]](https://docs.cryptoscan.pro/)
+[[Discord]](https://discord.gg/ktewAs67fE)
 
 To install package:
 

@@ -1,4 +1,28 @@
-export const getRates = async (to: string, from?: string, amount?: number) => {
+export interface Route {
+	service: string;
+	percentage: number;
+	price: number;
+	priceUSD: number;
+}
+
+export interface Rate {
+	contractFrom: string;
+	contractTo: string;
+	base: string;
+	quote: string;
+	poolAddress?: string;
+	price: number;
+	priceUSD: number;
+	result: number;
+	resultUSD: number;
+	fee: number;
+	feeUSD: number;
+	service: string;
+	impact: number;
+	routes: Route[];
+}
+
+export const getRates = async (to: string, from?: string, amount?: number): Promise<Rate[] | Error> => {
 	const params = new URLSearchParams()
 	params.set('to', to);
 	if (from) {
@@ -15,7 +39,7 @@ export const getRates = async (to: string, from?: string, amount?: number) => {
 }
 
 export const getRate = (to: string, from?: string, amount?: number) => 
-	getRates(to, from, amount).then(r => r[0])
+	getRates(to, from, amount).then(r => Array.isArray(r) ? r[0] : r)
 
 export const getPrice = (to: string, from?: string, amount?: number) => 
-	getRate(to, from, amount).then(r => r.price)
+	getRate(to, from, amount).then(r => r instanceof Error ? r : r.price)
