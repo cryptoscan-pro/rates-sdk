@@ -34,9 +34,16 @@ load()
 - `getRates(to: string, from: string): Promise<Rate[]>`
 - `getRate(to: string, from: string): Promise<Rate>`
 
+Request
+
 - `to` - coin address to get price
 - `from` - base coin address (Default: usdt)
 - `amount` - amount of base coin (Deafult: 1)
+
+Response
+
+List of `Rate`
+
 - `Rate`
     - `contractFrom` - contract of the base coin address
     - `contractTo` - contract of the quote coin address
