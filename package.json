@@ -1,0 +1,17 @@
+{
+  "name": "@cryptoscan/scanner-sdk",
+  "module": "lib/index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "bun --env-file=../../.env.test test",
+    "build": "pnpm run build:compile && pnpm run build:types",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:compile": "bun build lib/index.ts --outdir ./dist --target node"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
