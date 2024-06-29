@@ -10,6 +10,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "strict": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": false,

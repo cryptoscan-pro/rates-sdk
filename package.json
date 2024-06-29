@@ -1,7 +1,7 @@
 {
   "name": "@cryptoscan/scanner-sdk",
   "main": "dist/index.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "test": "bun --env-file=../../.env.test test",
@@ -14,5 +14,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "wait": "^0.4.2"
   }
 }
