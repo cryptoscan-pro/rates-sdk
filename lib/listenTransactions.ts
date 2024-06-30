@@ -1,13 +1,5 @@
 import WebSocket from 'ws';
-
-export interface Transaction {
-	tx: string;
-	baseAmount: number;
-	quoteAmount: number;
-	owner: string;
-	mint: string;
-	createdDate: Date;
-}
+import { Transaction } from './types/Transaction';
 
 export const listenTransactions = (
 	network: string,
