@@ -4,13 +4,13 @@
   "version": "0.0.7",
   "type": "module",
   "scripts": {
-    "test": "bun --env-file=../../.env.test test",
+    "test": "vitest",
     "build": "pnpm run build:compile && pnpm run build:types",
     "build:types": "tsc --emitDeclarationOnly",
     "build:compile": "bun build lib/index.ts --outdir ./dist --target node"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "vitest": "^1.6.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

@@ -1,0 +1,4 @@
+
+> @cryptoscan/scanner-sdk@0.0.7 build /Users/bondarev/projects/cryptoscan-pro/packages-public/scanner-sdk
+> pnpm run build:compile && pnpm run build:types
+

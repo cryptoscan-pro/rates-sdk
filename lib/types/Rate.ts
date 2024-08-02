@@ -1,5 +1,3 @@
-import { Route } from "next";
-
 export interface Rate {
 	contractFrom: string;
 	contractTo: string;
@@ -14,5 +12,6 @@ export interface Rate {
 	feeUSD: number;
 	service: string;
 	impact: number;
-	routes: Route[];
+	// TODO: need type
+	routes: any[];
 }

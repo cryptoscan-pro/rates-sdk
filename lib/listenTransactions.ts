@@ -6,7 +6,7 @@ export const listenTransactions = (
 	fromAddress: string,
 	onTransaction: (transaction: Transaction) => void,
 	toAddress?: string,
-) => {
+): () => void => {
 	const ws = new WebSocket('wss://api.cryptoscan.pro/v1/transactions');
 
 	ws.on('open', () => {
@@ -24,4 +24,8 @@ export const listenTransactions = (
 			createdDate: new Date(data.createdDate),
 		})
 	})
+
+	return () => {
+		ws.close();
+	}
 }
