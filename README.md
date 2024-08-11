@@ -15,6 +15,7 @@ npm install @cryptoscan/scanner-sdk
 
 Usage example:
 
+
 ```javascript
 import { getPrice, getRates, getRate } from '@cryptoscan/scanner-sdk';
 
