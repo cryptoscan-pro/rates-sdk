@@ -4,6 +4,7 @@ import { Rate } from "./types/Rate.js";
 
 export interface GetRateParams {
 	network: string;
+	service?: string;
 	to: string;
 	from?: string;
 	amount?: number;
