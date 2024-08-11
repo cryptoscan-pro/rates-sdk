@@ -26,11 +26,11 @@ export const getRates = async ({ network, to, from, amount }: GetRateParams): Pr
 	return res.json();
 }
 
-export const getRate = (params: GetRateParams) => 
+export const getRate = (params: GetRateParams): Promise<Rate | undefined> => 
 	getRates(params).then(r => Array.isArray(r) ? r[0] : r)
 
-export const getPrice = (params: GetRateParams) => 
-	getRate(params).then(r => r instanceof Error ? r : r.price)
+export const getPrice = (params: GetRateParams): Promise<number | undefined> => 
+	getRate(params).then(r => r?.price)
 
 export const listenTransactions = (
 	params: Omit<GetRateParams, 'amount'>,
