@@ -52,7 +52,7 @@ jobs:
           webhookUrl: ${{ secrets.DISCORD_RELEASES_WEBHOOK }}
           format: markdown
           message: |
-            🔄 **New Release**: [cryptoscan-pro/swap-sdk](https://github.com/cryptoscan-pro/swap-sdk/)
+            🔄 **New Release**: [cryptoscan-pro/scanner-sdk](https://github.com/cryptoscan-pro/scanner-sdk/)
 
             Status: *${{ needs.build.result == 'success' && '✅ SUCCESS' || '❌ ERROR' }}* 
             Branch: main

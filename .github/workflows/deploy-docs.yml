@@ -1,4 +1,4 @@
-name: Update Swap SDK Docs
+name: Update Scanner SDK Docs
 
 on:
   push:
@@ -29,13 +29,13 @@ jobs:
 
       - name: Copy README.md to destination
         run: |
-          cp README.md .github/docs/swap-sdk.md
+          cp README.md .github/docs/scanner-sdk.md
 
       - name: Commit and push changes
         run: |
           cd .github
           git add .
-          git commit -m "feat: update @cryptoscan/swap-sdk docs"
+          git commit -m "feat: update @cryptoscan/scanner-sdk docs"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,5 +46,5 @@ jobs:
           rm -rf .github
 
       - name: Success message
-        run: echo "README.md copied into .github/docs/swap-sdk.md"
+        run: echo "README.md copied into .github/docs/scanner-sdk.md"
 
