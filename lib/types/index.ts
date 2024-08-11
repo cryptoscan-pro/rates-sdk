@@ -1,3 +1,2 @@
-export { Transaction } from './Transaction';
-export { Route } from './Route';
-export { Rate } from './Rate';
+export { Transaction } from './Transaction.js';
+export { Rate } from './Rate.js';

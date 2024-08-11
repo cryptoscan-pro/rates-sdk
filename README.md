@@ -21,12 +21,13 @@ import { getPrice, getRates, getRate } from '@cryptoscan/scanner-sdk';
 const network = 'solana';
 const from = 'USDC';
 const to = 'SOL';
+const amount = 10;
 
 async function load() {
-  const price = await getPrice(network, to, from); // 145.3
-  const amount = await getPrice(network, to, from, 10); // 1453
-  const rates = await getRate(network, to, from) // Array of @Rate
-  const rate = await getRate(network, to, from) // The first @Rate
+  const price = await getPrice({ network, to, from }); // 145.3
+  const amount = await getPrice({ network, to, from, amount }); // 1453
+  const rates = await getRate({ network, to, from }) // Array of Rate
+  const rate = await getRate({ network, to, from }) // The first Rate
 }
 
 load()
@@ -34,18 +35,9 @@ load()
 
 ## Docs
 
-- `getPrice(network: string, to: string, from: string, amount: number): Promise<number>`
-- `getRates(network: string, to: string, from: string): Promise<Rate[]>`
-- `getRate(network: string, to: string, from: string): Promise<Rate>`
-- `listenTransactions(network: string, fromAddress: string, onTransaction: (t: Transaction) => void, toAddress?: string): () => void`
-	- `tx` - transaction hash
-	- `baseAmount` - amount of base coin
-	- `quoteAmount` - amount of quote coin
-	- `amount` - amount of base coin
-    
-
 Request
 
+- `network` - network name (Optional - auto-detecting)
 - `to` - coin address to get price
 - `from` - base coin address (Default: usdt)
 - `amount` - amount of base coin (Deafult: 1)

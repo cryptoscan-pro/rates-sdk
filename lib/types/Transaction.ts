@@ -4,5 +4,5 @@ export interface Transaction {
 	quoteAmount: number;
 	owner: string;
 	mint: string;
-	createdDate: Date;
+	createdAt: Date;
 }
