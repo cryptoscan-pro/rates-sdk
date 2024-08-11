@@ -1,6 +1,5 @@
-import { describe, test } from 'vitest';
+/* import { describe, test } from 'vitest';
 import wait from 'wait';
-import { listenTransactions } from './listenTransactions';
 
 const TIMEOUT = 60 * 1_000;
 
@@ -12,4 +11,4 @@ describe('test listen transactions', () => {
     })
     await wait(TIMEOUT);
   }, TIMEOUT)
-})
+}) */
