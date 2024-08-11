@@ -4,7 +4,7 @@ The easiest way to get dynamic swap/exchange rates by CEX and DEX tokens
 
 [[GitHub]](https://github.com/cryptoscan-pro/scanner-sdk)
 [[Our website]](https://cryptoscan.pro/)
-[[Docs]](https://docs.cryptoscan.pro/)
+[[Docs]](https://cryptoscan.pro/docs/)
 [[Discord]](https://discord.gg/ktewAs67fE)
 
 To install package:
@@ -14,7 +14,6 @@ npm install @cryptoscan/scanner-sdk
 ```
 
 Usage example:
-
 
 ```javascript
 import { getPrice, getRates, getRate } from '@cryptoscan/scanner-sdk';
