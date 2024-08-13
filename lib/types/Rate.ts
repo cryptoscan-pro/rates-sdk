@@ -6,8 +6,8 @@ export interface Rate {
 	poolAddress?: string;
 	price: number;
 	priceUSD: number;
-	result: number;
-	resultUSD: number;
+	amount: number;
+	amountUSD: number;
 	fee: number;
 	feeUSD: number;
 	service: string;
