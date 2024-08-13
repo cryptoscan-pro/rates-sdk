@@ -1,9 +1,8 @@
 {
   "name": "@cryptoscan/scanner-sdk",
-  "main": "dist/index.js",
-  "version": "1.1.1",
-  "type": "module",
   "main": "dist/esm/index.js",
+  "version": "1.2.0",
+  "type": "module",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
