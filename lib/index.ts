@@ -10,34 +10,27 @@ export interface GetRateParams {
 	amount?: number;
 }
 
-export const getRates = async ({ network, to, from, amount }: GetRateParams): Promise<Rate[]> => {
-	const params = new URLSearchParams()
-	params.set('network', network);
-	params.set('to', to);
-	if (from) {
-		params.set('from', from);
+export const getRates = async (options: GetRateParams, key = 'dex-rates'): Promise<Rate[]> => {
+	const params = new URLSearchParams(options as unknown as Record<string, string>);
+	const res = await fetch(`https://api.cryptoscan.pro/${key}?${params}`);
+	const data = await res.json();
+	if (!data.quota) {
+		throw new Error(data.error);
 	}
-	if (amount && (Number.isNaN(amount) || !Number.isFinite(amount))) {
-		throw new Error('Amount must be a number')
-	}
-	if (amount) {
-		params.set('amount', String(amount));
-	}
-	const res = await fetch('https://api.cryptoscan.pro/v1/rate?' + params.toString());
-	return res.json();
+	return data.data;
 }
 
-export const getRate = (params: GetRateParams): Promise<Rate | undefined> => 
+export const getRate = (params: GetRateParams): Promise<Rate | undefined> =>
 	getRates(params).then(r => Array.isArray(r) ? r[0] : r)
 
-export const getPrice = (params: GetRateParams): Promise<number | undefined> => 
+export const getPrice = (params: GetRateParams): Promise<number | undefined> =>
 	getRate(params).then(r => r?.price)
 
 export const listenTransactions = (
 	params: Omit<GetRateParams, 'amount'>,
 	onTransaction: (transaction: Transaction) => void,
 ): () => void => {
-	const ws = new WebSocket('wss://api.cryptoscan.pro/v1/transactions');
+	const ws = new WebSocket('wss://api.cryptoscan.pro/transactions?' + new URLSearchParams(params));
 
 	ws.on('open', () => {
 		ws.send(JSON.stringify(params));
