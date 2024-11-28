@@ -23,7 +23,8 @@ describe('get rates', () => {
 		const to = 'sol';
 		const rates = await getRates({
 			network,
-			symbol: to + from,
+			to,
+			from,
 		})
 		console.log(rates)
 		expect(rates.length).toBeGreaterThan(0);

@@ -1,5 +1,5 @@
 {
-  "name": "@cryptoscan/rates-sdk",
+  "name": "@cryptoscan/scanner-sdk",
   "main": "dist/esm/index.js",
   "version": "1.2.1",
   "type": "module",
