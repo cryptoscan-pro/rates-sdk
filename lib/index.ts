@@ -23,6 +23,7 @@ export const getRates = async ({ network, to, from, amount }: GetRateParams): Pr
 	if (amount) {
 		params.set('amount', String(amount));
 	}
+	console.log('https://api.cryptoscan.pro/v1/rate?' + params.toString())
 	const res = await fetch('https://api.cryptoscan.pro/v1/rate?' + params.toString());
 	return res.json();
 }
