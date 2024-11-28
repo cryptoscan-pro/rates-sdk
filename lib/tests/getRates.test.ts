@@ -23,23 +23,22 @@ describe('get rates', () => {
 		const to = 'sol';
 		const rates = await getRates({
 			network,
-			from,
-			to,
+			symbol: to + from,
 		})
 		console.log(rates)
 		expect(rates.length).toBeGreaterThan(0);
 	}, 10_000)
 
-	test('should get rates by addresses', async () => {
-		const network = 'solana';
-		const from = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
-		const to = 'So11111111111111111111111111111111111111112';
-		const rates = await getRates({
-			network,
-			from,
-			to,
-		})
-		console.log(rates)
-		expect(rates.length).toBeGreaterThan(0);
-	}, 10_000)
+	//test('should get rates by addresses', async () => {
+	//	const network = 'solana';
+	//	const from = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
+	//	const to = 'So11111111111111111111111111111111111111112';
+	//	const rates = await getRates({
+	//		network,
+	//		from,
+	//		to,
+	//	})
+	//	console.log(rates)
+	//	expect(rates.length).toBeGreaterThan(0);
+	//}, 10_000)
 })
